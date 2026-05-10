@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Password Remover</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Remove Password From PDF</h1>
+
+    <p class="subtitle">
+      Upload your PDF and enter password.
+    </p>
+
+    <form id="pdfForm">
+      <input type="file" name="pdf" accept="application/pdf" required />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter PDF Password"
+        required
+      />
+
+      <button type="submit">Remove Password</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
