@@ -7,6 +7,14 @@ const { exec } = require('child_process');
 const app = express();
 const PORT = 3000;
 
+if (!fs.existsSync('uploads')) {
+  fs.mkdirSync('uploads');
+}
+
+if (!fs.existsSync('outputs')) {
+  fs.mkdirSync('outputs');
+}
+
 app.use(express.static('public'));
 app.use('/outputs', express.static('outputs'));
 
