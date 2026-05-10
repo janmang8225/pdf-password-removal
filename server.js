@@ -37,7 +37,12 @@ app.post('/remove-password', upload.single('pdf'), (req, res) => {
 
   const command = `qpdf --password="${password}" --decrypt "${inputPath}" "${outputPath}"`;
 
-  exec(command, (error) => {
+  console.log(req.file);
+  console.log(password);
+  console.log(command);
+
+  exec(command, (error, stdout, stderr) => {
+    console.log(stderr);
     fs.unlinkSync(inputPath);
 
     if (error) {
